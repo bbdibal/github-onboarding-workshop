@@ -1050,12 +1050,10 @@ function cleanName(filename, folderName) {
 
 async function loadSession(session) {
   try {
-    const bust = '&t=' + Date.now();
-    const res = await fetch(API + session.folder + '?ref=' + BRANCH + bust, {
-      headers: {
-        'Accept': 'application/vnd.github.v3+json',
-        'Cache-Control': 'no-cache'
-      },
+    // Cache-bust via timestamp in URL — no custom headers to avoid CORS preflight
+    const url = API + session.folder + '?ref=' + BRANCH + '&_=' + Date.now();
+    const res = await fetch(url, {
+      headers: { 'Accept': 'application/vnd.github.v3+json' },
       cache: 'no-store'
     });
     if (!res.ok) throw new Error('fetch failed');
@@ -1074,6 +1072,7 @@ async function loadSession(session) {
 
     return { session, submissions };
   } catch(e) {
+    console.error('Failed to load', session.folder, e);
     return { session, submissions: [] };
   }
 }
