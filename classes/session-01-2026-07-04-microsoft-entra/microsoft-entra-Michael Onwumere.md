@@ -1,8 +1,13 @@
 **Cloud Security & AI Bootcamp – Session Report**
+
 **Date :	Saturday, 4 July 2026**
+
 **Mentor :	Emmanuel Itoje / Uchechukwu Azunna**
+
 **Moderator :	Amos Adereti**
+
 **Microsoft Learn resources :	https://learn.microsoft.com/en-us/training/paths/secure-access-resources-entra/**
+
 **Modules Covered :	Secure access to resources using Microsoft Entra**
 
 About This Session
