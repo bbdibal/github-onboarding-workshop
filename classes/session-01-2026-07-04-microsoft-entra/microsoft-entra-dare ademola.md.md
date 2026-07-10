@@ -13,6 +13,8 @@
 **API Authentication for Declarative Agents (Copilot)**
 - Creating API keys and storing them securely in a vault, then referencing the vault key as an extension to grant trusted third parties access to the API.
 - Configuring OAuth for API access and securing those credentials in the vault.
+- <img width="1196" height="766" alt="Activate MS 365 agent " src="https://github.com/user-attachments/assets/9d92ca8c-cc93-4172-a98b-ffdb4f11660d" />
+
 
 ---
 
