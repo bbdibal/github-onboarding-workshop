@@ -1,3 +1,5 @@
+# My Notes - Michael Chinonso Onwumere
+
 Cloud Security & AI Bootcamp — Weekly Session Report
 
 Date: July 11, 2026 
@@ -19,7 +21,9 @@ attack chain:
 •	Key Vault Object Types — Azure Key Vault stores three distinct categories of sensitive objects:
 
 Secrets: Passwords, connection strings, API keys	Used by apps and automation at runtime
+
 Keys: Cryptographic keys for encrypt/decrypt/sign	Key lifecycle, rotation, and crypto operations
+
 Certificates: X.509 certificates	TLS and workload trust boundaries
 
 •	Two Independent Authorization Planes — Azure Key Vault enforces access through two separate planes, both authenticated via Microsoft Entra ID:
