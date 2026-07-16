@@ -1,6 +1,9 @@
 Cloud Security & AI Bootcamp — Weekly Session Report
+
 Date: July 11, 2026 
-Instructor: Oluwatosin Ajala 
+
+Instructor: Oluwatosin Ajala
+
 Topic: Secure Azure Key Vault with Defense in Depth for the Cloud & AI Workloads
 ________________________________________
 
