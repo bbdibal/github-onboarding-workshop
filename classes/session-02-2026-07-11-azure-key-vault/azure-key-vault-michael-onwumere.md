@@ -1,24 +1,24 @@
 # My Notes - Michael Chinonso Onwumere
 
-Cloud Security & AI Bootcamp — Weekly Session Report
+### Cloud Security & AI Bootcamp — Weekly Session Report
 
-Date: July 11, 2026 
+### Date: July 11, 2026 
 
-Instructor: Oluwatosin Ajala
+### Instructor: Oluwatosin Ajala
 
-Topic: Secure Azure Key Vault with Defense in Depth for the Cloud & AI Workloads
+### Topic: Secure Azure Key Vault with Defense in Depth for the Cloud & AI Workloads
 ________________________________________
 
-Key Concepts I Learned
+### Key Concepts I Learned
 
 •	Azure Key Vault is a managed cloud service that provides a secure, centralized location for storing and managing secrets, cryptographic keys, and X.509 certificates — keeping sensitive data out of application code and configuration files.
 
 •	Hardcoding secrets (API keys, passwords, connection strings) directly in application config files or source code is a dangerous security anti-pattern. A single exposed secret can escalate into full workload compromise through a predictable 
 
-attack chain:
+### attack chain:
 1.	Secret stored in config → 2. Credential discovered → 3. Privilege reuse → 4. Data exfiltration & unauthorized execution.
  
-•	Key Vault Object Types — Azure Key Vault stores three distinct categories of sensitive objects:
+#### •	Key Vault Object Types — Azure Key Vault stores three distinct categories of sensitive objects:
 
 Secrets: Passwords, connection strings, API keys	Used by apps and automation at runtime
 
@@ -26,7 +26,7 @@ Keys: Cryptographic keys for encrypt/decrypt/sign	Key lifecycle, rotation, and c
 
 Certificates: X.509 certificates	TLS and workload trust boundaries
 
-•	Two Independent Authorization Planes — Azure Key Vault enforces access through two separate planes, both authenticated via Microsoft Entra ID:
+#### •	Two Independent Authorization Planes — Azure Key Vault enforces access through two separate planes, both authenticated via Microsoft Entra ID:
 
 o	Control Plane — Manages the Key Vault resource itself (create/delete vault, configure network & firewall, assign Azure Policy). Roles: Key Vault Contributor, Owner.
 
@@ -34,12 +34,12 @@ o	Data Plane — Controls access to the actual secrets, keys, and certificates. 
 
 o	⚠️ Access to the Control Plane does not automatically grant Data Plane access — these are independent authorization decisions.
  
-•	Azure RBAC vs. Legacy Vault Access Policies — Azure RBAC is the recommended access control model for Key Vault:
+#### •	Azure RBAC vs. Legacy Vault Access Policies — Azure RBAC is the recommended access control model for Key Vault:
 o	✅ Azure RBAC — Unified authorization across Azure, role assignments are auditable and scoped, works cleanly with Managed Identities.
 
 o	❌ Vault Access Policies (Legacy) — Separate permission model per vault, higher risk of policy drift, still present in existing environments.
  
-•	Managed Identities eliminate the need to store credentials in application code by allowing Azure resources to authenticate directly to Key Vault. The retrieval flow works as follows:
+#### •	Managed Identities eliminate the need to store credentials in application code by allowing Azure resources to authenticate directly to Key Vault. The retrieval flow works as follows:
 
 1.	Request Token — SDK requests a token from the local IMDS endpoint.
 2.	
@@ -49,12 +49,12 @@ o	❌ Vault Access Policies (Legacy) — Separate permission model per vault, hi
 6.	
 7.	Authorize & Return — RBAC is checked; secret is returned over TLS.
  
-•	Microsoft Defender for Cloud enhances Key Vault security by detecting suspicious access patterns, generating actionable security recommendations, and continuously monitoring for potential threats.
+#### •	Microsoft Defender for Cloud enhances Key Vault security by detecting suspicious access patterns, generating actionable security recommendations, and continuously monitoring for potential threats.
 
-•	Defense-in-Depth controls for Key Vault include: Firewall rules, Soft Delete, Purge Protection, and automated Key Rotation — layering multiple safeguards around sensitive data.
+#### •	Defense-in-Depth controls for Key Vault include: Firewall rules, Soft Delete, Purge Protection, and automated Key Rotation — layering multiple safeguards around sensitive data.
 ________________________________________
 
-Lab / Hands-On Work
+### Lab / Hands-On Work
 
 What I Did
 
@@ -78,14 +78,14 @@ By the end of the session, I had a clear understanding of how Azure Key Vault pr
 I also understood how Managed Identities, Azure RBAC, and Microsoft Defender for Cloud work together to form a robust, defense-in-depth strategy for securing cloud workloads — one where no single point of failure can result in full compromise.
 ________________________________________
 
-Some key images for these learnings are: 
+### Some key images for these learnings are: 
 <img width="1148" height="425" alt="Key 1" src="https://github.com/user-attachments/assets/80c51021-63e6-4871-9e46-bbf260d0b33b" />
 <img width="743" height="295" alt="Key 2" src="https://github.com/user-attachments/assets/ed6065c4-3e36-4f82-86d4-95aca468a070" />
 <img width="737" height="294" alt="Key 3" src="https://github.com/user-attachments/assets/d4c552c5-5680-4e22-a71e-33b2bb622aa7" />
 <img width="730" height="275" alt="Key 4" src="https://github.com/user-attachments/assets/6c57289d-a0b7-46ae-a917-4e4150b2f1a1" />
 <img width="749" height="295" alt="Key 5" src="https://github.com/user-attachments/assets/044cb189-0df0-419c-a7ae-083f7f909579" />
 
-Challenges I Faced
+### Challenges I Faced
 
 •	Control Plane vs. Data Plane — Initially confusing to separate their responsibilities. The key insight was that the Control Plane manages the vault itself, while the Data Plane manages what's inside the vault. Access to one does not grant the other.
 
@@ -95,7 +95,7 @@ Challenges I Faced
 
 Another challenge I faced was not having access to a full Azure subscription. This limited my ability to practice the concepts I learned and fully engage in the hands-on lab exercises.
 
-My Takeaways
+### My Takeaways
 
 The most important lesson from this session is that identity is as critical as the secret itself.
 
@@ -113,7 +113,7 @@ Another significant insight was around token hygiene: authentication tokens carr
 •	Apply defense-in-depth: layer Key Vault controls with Microsoft Defender for Cloud monitoring.
 ________________________________________
 
-Questions I Still Have
+### Questions I Still Have
 
 •	How does Azure Key Vault integrate with Azure App Service and Azure Functions in real-world production environments? What does the Managed Identity setup look like end-to-end in a live deployment?
 
@@ -124,7 +124,7 @@ Questions I Still Have
 •	In what scenarios would User-Assigned Managed Identity be preferred over System-Assigned, especially in microservices architectures?
 ________________________________________
 
-Resources I Found Useful
+### Resources I Found Useful
 
 •	Microsoft Learn — Azure Key Vault Overview
 
