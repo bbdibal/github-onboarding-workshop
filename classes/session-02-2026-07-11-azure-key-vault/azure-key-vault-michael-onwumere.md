@@ -76,14 +76,6 @@ What Happened / Result
 By the end of the session, I had a clear understanding of how Azure Key Vault protects sensitive information and why it should always be used instead of storing secrets in application settings or source code.
 
 I also understood how Managed Identities, Azure RBAC, and Microsoft Defender for Cloud work together to form a robust, defense-in-depth strategy for securing cloud workloads — one where no single point of failure can result in full compromise.
-
-Challenges I Faced
-
-•	Control Plane vs. Data Plane — Initially confusing to separate their responsibilities. The key insight was that the Control Plane manages the vault itself, while the Data Plane manages what's inside the vault. Access to one does not grant the other.
-
-•	System-Assigned vs. User-Assigned Managed Identities — Understanding the lifecycle differences: System-Assigned identities are tied to the resource lifecycle (deleted with the resource), while User-Assigned identities are independent and can be shared across multiple resources.
-
-•	RBAC + Managed Identity relationship — Grasping how Managed Identity provides authentication while RBAC provides authorization — two distinct layers working together.
 ________________________________________
 
 Some key images for these learnings are: 
@@ -93,8 +85,15 @@ Some key images for these learnings are:
 <img width="730" height="275" alt="Key 4" src="https://github.com/user-attachments/assets/6c57289d-a0b7-46ae-a917-4e4150b2f1a1" />
 <img width="749" height="295" alt="Key 5" src="https://github.com/user-attachments/assets/044cb189-0df0-419c-a7ae-083f7f909579" />
 
+Challenges I Faced
 
+•	Control Plane vs. Data Plane — Initially confusing to separate their responsibilities. The key insight was that the Control Plane manages the vault itself, while the Data Plane manages what's inside the vault. Access to one does not grant the other.
 
+•	System-Assigned vs. User-Assigned Managed Identities — Understanding the lifecycle differences: System-Assigned identities are tied to the resource lifecycle (deleted with the resource), while User-Assigned identities are independent and can be shared across multiple resources.
+
+•	RBAC + Managed Identity relationship — Grasping how Managed Identity provides authentication while RBAC provides authorization — two distinct layers working together.
+
+Another challenge I faced was not having access to a full Azure subscription. This limited my ability to practice the concepts I learned and fully engage in the hands-on lab exercises.
 
 My Takeaways
 
